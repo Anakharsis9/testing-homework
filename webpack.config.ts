@@ -2,6 +2,7 @@ import * as path from 'path';
 import * as webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -41,6 +42,7 @@ const config: webpack.Configuration = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
+        plugins: [new TsconfigPathsPlugin()],
     },
 };
 
