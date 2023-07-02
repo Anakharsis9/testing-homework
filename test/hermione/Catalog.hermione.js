@@ -21,10 +21,13 @@ describe("Каталог", async function () {
   });
 
   it("На странице товара отображаются: название товара, его описание, цена, цвет, материал и кнопка", async function () {
-    await this.browser.url("http://localhost:3000/hw/store/catalog/0");
+    await this.browser.url("http://localhost:3000/hw/store/catalog/1");
 
-    const productName = await this.browser.$(".ProductDetails-Name").getText();
-    assert.notEqual(productName, "", "Название товара не должно быть пустым");
+    const productName = await this.browser.$(".ProductDetails-Name");
+    const productNameIsExist = await productName.isExisting();
+    assert.isTrue(productNameIsExist, "Название товара должен быть отабражен");
+    const productNameText = await productName.getText();
+    assert.notEqual(productNameText, "", "Название товара не должно быть пустым");
 
     const productDescription = await this.browser
       .$(".ProductDetails-Description")
