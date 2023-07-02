@@ -20,7 +20,7 @@ const mockedProducts = [
     price: 734
   }
 ];
-describe("Проверить адаптивность верстки 'каталога' при 1920, 1280, 768, 576", async function () {
+describe("Проверить адаптивность верстки 'каталога' при 1920, 1280, 768, 575", async function () {
   it("Адаптив при 1920", async function () {
     const getProductsMock = await this.browser.mock(
       "http://localhost:3000/hw/store/api/products",
@@ -68,7 +68,7 @@ describe("Проверить адаптивность верстки 'катал
     await this.browser.mockRestoreAll();
   });
 
-  it("Страница каталога адаптируется при 576", async function () {
+  it("Страница каталога адаптируется при 575", async function () {
     const getProductsMock = await this.browser.mock(
       "http://localhost:3000/hw/store/api/products",
       {
@@ -78,8 +78,8 @@ describe("Проверить адаптивность верстки 'катал
     getProductsMock.respond(mockedProducts);
     await this.browser.url("http://localhost:3000/hw/store/catalog");
 
-    await this.browser.setWindowSize(576, 1080);
-    await this.browser.assertView("catalog-576", "body");
+    await this.browser.setWindowSize(575, 1080);
+    await this.browser.assertView("catalog-575", "body");
 
     await this.browser.mockRestoreAll();
   });

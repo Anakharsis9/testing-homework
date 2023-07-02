@@ -1,6 +1,6 @@
 const { assert } = require("chai");
 
-describe("Проверить адаптивность верстки главной при 1920, 1280, 768, 576", async function () {
+describe("Проверить адаптивность верстки главной при 1920, 1280, 768, 575", async function () {
     it("Адаптив при 1920", async function () {
       await this.browser.url("http://localhost:3000/hw/store/");
       await this.browser.assertView("plain", "body");
@@ -20,10 +20,10 @@ describe("Проверить адаптивность верстки главн�
       await this.browser.assertView("main-768", "body");
     });
 
-    it("Адаптив при 576", async function () {
+    it("Адаптив при 575", async function () {
       await this.browser.url("http://localhost:3000/hw/store/");
 
-      await this.browser.setWindowSize(576, 1080);
-      await this.browser.assertView("main-576", "body");
+      await this.browser.setWindowSize(575, 1080);
+      await this.browser.assertView("main-575", "body");
     });
 });
