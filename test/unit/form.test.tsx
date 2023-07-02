@@ -44,4 +44,24 @@ describe("Проверка формы", () => {
     expect(phoneInput).toHaveClass("is-invalid");
   });
 
+  it("Все поля заполнены корректно", async () => {
+    render(<MockForm />);
+
+    const nameInput = screen.getByTestId("f-name");
+    const phoneInput = screen.getByTestId("f-phone");
+    const addressInput = screen.getByTestId("f-address");
+
+    await events.type(nameInput, "Иван");
+    await events.type(phoneInput, "0123456789");
+    await events.type(addressInput, "Улица Пушкина");
+
+    const submitBtn = screen.getByTestId("f-submit");
+
+    await events.click(submitBtn);
+
+    expect(nameInput).not.toHaveClass("is-invalid");
+    expect(phoneInput).not.toHaveClass("is-invalid");
+    expect(addressInput).not.toHaveClass("is-invalid");
+  });
+
 });
