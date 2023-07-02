@@ -47,7 +47,7 @@ describe("Проверить адаптивность верстки 'катал
     await this.browser.url("http://localhost:3000/hw/store/catalog");
 
     await this.browser.setWindowSize(1280, 1080);
-    await this.browser.assertView("main-1280", "body");
+    await this.browser.assertView("catalog-1280", "body");
 
     await this.browser.mockRestoreAll();
   });
@@ -63,7 +63,7 @@ describe("Проверить адаптивность верстки 'катал
     await this.browser.url("http://localhost:3000/hw/store/catalog");
 
     await this.browser.setWindowSize(768, 1080);
-    await this.browser.assertView("main-768", "body");
+    await this.browser.assertView("catalog-768", "body");
 
     await this.browser.mockRestoreAll();
   });
@@ -79,7 +79,7 @@ describe("Проверить адаптивность верстки 'катал
     await this.browser.url("http://localhost:3000/hw/store/catalog");
 
     await this.browser.setWindowSize(576, 1080);
-    await this.browser.assertView("main-576", "body");
+    await this.browser.assertView("catalog-576", "body");
 
     await this.browser.mockRestoreAll();
   });
