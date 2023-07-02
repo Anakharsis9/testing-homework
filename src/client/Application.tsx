@@ -34,18 +34,18 @@ export const Application: FC = () => {
 
     return <div className={bem()}>
         <Helmet titleTemplate="%s — Example store" />
-        <nav className="navbar navbar-expand-sm navbar-light bg-light">
+        <nav data-testid="header" className="navbar navbar-expand-sm navbar-light bg-light">
             <div className="container">
-                <Link className={bem('Brand', ['navbar-brand'])} to="/">Example store</Link>
-                <button className={bem('Toggler', ['navbar-toggler'])} aria-label="Toggle navigation" onClick={toggle}>
+                <Link data-testid="main" className={bem('Brand', ['navbar-brand'])} to="/">Example store</Link>
+                <button data-testid="hamburger" className={bem('Toggler', ['navbar-toggler'])} aria-label="Toggle navigation" onClick={toggle}>
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className={bem('Menu', [navbarClass])}>
                     <div className="navbar-nav">
-                        <NavLink className="nav-link" activeClassName="active" to="/catalog" onClick={hide}>Catalog</NavLink>
-                        <NavLink className="nav-link" activeClassName="active" to="/delivery" onClick={hide}>Delivery</NavLink>
-                        <NavLink className="nav-link" activeClassName="active" to="/contacts" onClick={hide}>Contacts</NavLink>
-                        <NavLink className="nav-link" activeClassName="active" to="/cart" onClick={hide}>{cartLabel}</NavLink>
+                        <NavLink data-testid="catalog" className="nav-link" activeClassName="active" to="/catalog" onClick={hide}>Catalog</NavLink>
+                        <NavLink data-testid="delivery" className="nav-link" activeClassName="active" to="/delivery" onClick={hide}>Delivery</NavLink>
+                        <NavLink data-testid="contacts" className="nav-link" activeClassName="active" to="/contacts" onClick={hide}>Contacts</NavLink>
+                        <NavLink data-testid="cart" className="nav-link" activeClassName="active" to="/cart" onClick={hide}>{cartLabel}</NavLink>
                     </div>
                 </div>
             </div>
