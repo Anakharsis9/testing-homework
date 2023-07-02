@@ -37,7 +37,7 @@ export const Application: FC = () => {
         <nav data-testid="header" className="navbar navbar-expand-sm navbar-light bg-light">
             <div className="container">
                 <Link data-testid="main" className={bem('Brand', ['navbar-brand'])} to="/">Example store</Link>
-                <button data-testid="hamburger" className={bem('Toggler', ['navbar-toggler'])} aria-label="Toggle navigation" onClick={toggle}>
+                <button id="hamburger" className={bem('Toggler', ['navbar-toggler'])} aria-label="Toggle navigation" onClick={toggle}>
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className={bem('Menu', [navbarClass])}>

@@ -13,7 +13,7 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src", "test"],
+  "include": ["src/**/*", "test/**/*", "setup-jest.ts"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

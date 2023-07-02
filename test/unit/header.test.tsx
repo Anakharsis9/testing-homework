@@ -1,4 +1,3 @@
-import { it, expect } from "@jest/globals";
 import { screen, fireEvent } from "@testing-library/react";
 import events from "@testing-library/user-event";
 
